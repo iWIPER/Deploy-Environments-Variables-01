@@ -11,11 +11,11 @@ public class MainController {
     @Autowired
     private Environment environment;
 
-    // Get the information from the YML file.
     @GetMapping("/")
-    public String multi(){
-        String authCode = environment.getProperty("property.authCode");
-        String devName = environment.getProperty("property.devName");
+    public String greeting(){
+        String authCode = environment.getProperty("myCustomProps.authCode");
+        String devName = environment.getProperty("myCustomProps.devName");
         return "welcome user - Your AuthCode is: " + authCode + " devName: " + devName;
+
     }
 }
